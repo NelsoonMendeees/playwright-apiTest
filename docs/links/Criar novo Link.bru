@@ -1,0 +1,26 @@
+meta {
+  name: Criar novo Link
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3333/api/links
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{token}}
+}
+
+body:json {
+  {
+    "original_url": "https://www.linkedin.com/in/nelsongomees",
+    "title": "Meu Linkedin"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

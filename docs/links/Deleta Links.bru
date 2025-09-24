@@ -1,0 +1,19 @@
+meta {
+  name: Deleta Links
+  type: http
+  seq: 3
+}
+
+delete {
+  url: http://localhost:3333/api/links/01K5RKYYE79XMX0M2H8116A2GD
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{token}}
+}
+
+settings {
+  encodeUrl: true
+}
