@@ -6,7 +6,7 @@ Este repositório contém testes automatizados de **API** utilizando [Playwright
 
 ## ✅ Status do Workflow
 
-[![Playwright API Tests + Report](https://github.com/NelsoonMendeees/playwright-apiTest/actions/workflows/pw-test.yml/badge.svg)](https://github.com/NelsoonMendeees/playwright-apiTest/actions/workflows/pw-test.yml)
+[![Playwright API Tests](https://github.com/NelsoonMendeees/playwright-apiTest/actions/workflows/pw-test.yml/badge.svg)](https://github.com/NelsoonMendeees/playwright-apiTest/actions/workflows/pw-test.yml)
 
 ---
 
@@ -22,7 +22,7 @@ O relatório mais recente está disponível em:
 
 - `podman-compose.yml` → sobe os containers (Postgres, Adminer, API e Web).  
 - `.github/workflows/pw-test.yml` → workflow para rodar testes e publicar relatório.  
-- `tests/` → diretório onde ficam os testes do Playwright.  
+- `playwright/e2e/` → diretório onde ficam os testes do Playwright.  
 
 ---
 
@@ -30,7 +30,7 @@ O relatório mais recente está disponível em:
 
 ```bash
 # Subir ambiente
-podman-compose up -d
+podman play kube shortbeyond.yaml
 
 # Instalar dependências
 npm install
@@ -40,3 +40,9 @@ npm run pw-run
 
 # Gerar relatório
 npx playwright show-report
+
+```
+---
+
+## ⚠️ Observações / Pré-requisitos
+- É necessário ter o Podman e Podman Compose instalados na máquina para subir o ambiente localmente.
