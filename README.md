@@ -1,6 +1,6 @@
 # 🚀 Playwright API Tests
 
-Este repositório contém testes automatizados de **API** utilizando [Playwright](https://playwright.dev/), rodando em pipeline com **GitHub Actions** e publicado no **GitHub Pages**.
+Este repositório contém testes automatizados de **API** referentes ao BootCamp [TestBeyond](https://www.linkedin.com/company/testbeyond) - Fernando Papito, utilizando [Playwright](https://playwright.dev/), rodando em pipeline com **GitHub Actions** e publicado no **GitHub Pages**.
 
 ---
 
@@ -20,7 +20,7 @@ O relatório mais recente está disponível em:
 
 ## 📂 Estrutura
 
-- `podman-compose.yml` → sobe os containers (Postgres, Adminer, API e Web).  
+- `shortbeyond.yaml` → sobe os pods (Postgres, Adminer, API e Web).  
 - `.github/workflows/pw-test.yml` → workflow para rodar testes e publicar relatório.  
 - `playwright/e2e/` → diretório onde ficam os testes do Playwright.  
 
