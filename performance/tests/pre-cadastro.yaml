@@ -1,0 +1,33 @@
+config:
+  target: 'http://localhost:3333/api'
+  phases:
+    - name: 'cadastros_sucesso'
+      count: 100
+      arrivalRate: 1 # 1 req/s → todos os 100 serão usados
+  defaults:
+    headers:
+      Content-Type: 'application/json'
+  payload:
+    path: '../data/usuarios.csv'
+    fields:
+      - name
+      - email
+      - password
+    order: sequence # percorre usuários em ordem (sem repetir)
+
+scenarios:
+  - name: 'Cadastro com Massa Completa'
+    flow:
+      - post:
+          url: '/auth/register'
+          json:
+            name: '{{ name }}'
+            email: '{{ email }}'
+            password: '{{ password }}'
+          expect:
+            - statusCode: 201
+            - hasProperty: 'user'
+            - match:
+                json: '$.message'
+                value: 'Usuário cadastrado com sucesso!'
+      - think: 0.2 # espera 200ms entre requisições
